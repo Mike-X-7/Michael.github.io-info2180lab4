@@ -45,9 +45,14 @@ function newGame() {
   $("status").textContent = "Start Moving through the maze.";
 }
 
+function cheater(){
+	$("maze").onmouseover = noCheating;
+}
 function noCheating(){
-var x = $$("div#maze div#start");
-  x.onmouseout = changeColor2;
+var x = document.getElementsById("maze");
+  x.style.borderLeft.onmouseout = changeColor2;
+  
+  
 }
 
 function addLoadEvent(func) {
@@ -67,5 +72,5 @@ addLoadEvent(overBoundary);
 addLoadEvent(overRemainingBoundarys);
 addLoadEvent(the_end);
 addLoadEvent(restart);
-addLoadEvent(noCheating);
+addLoadEvent(cheater);
 addLoadEvent(function() {});
